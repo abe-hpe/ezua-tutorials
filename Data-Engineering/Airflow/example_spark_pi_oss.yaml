@@ -4,9 +4,9 @@ metadata:
   name: spark-pi-oss-{{ts_nodash|replace("T", "")}}
 spec:
   type: Python
-  sparkVersion: '{{dag_run.conf["Spark-image-version"]}}'
+  sparkVersion: '{{dag_run.conf["spark_image_version"]}}'
   mode: cluster
-  image: '{{dag_run.conf["Spark-image"]|default("", True)}}'
+  image: '{{dag_run.conf["spark_image_url"]|default("", True)}}'
   imagePullPolicy: Always
   imagePullSecrets:
   - imagepull
